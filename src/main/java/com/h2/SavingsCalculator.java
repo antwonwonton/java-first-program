@@ -6,7 +6,7 @@ public class SavingsCalculator {
     private float[] credits;
     private float[] debits;
 
-    public SavingsCalculator ( float[]credits, float[]debits){
+    public SavingsCalculator ( float[] credits, float[] debits){
         this.credits = credits;
         this.debits = debits;
     }
@@ -37,10 +37,10 @@ public class SavingsCalculator {
         final String[] creditsAsString = args[0].split(",");
         final String[] debitsAsString = args[1].split(",");
         final float[] credits = new float [creditsAsString.length];
+        final float[] debits = new float [debitsAsString.length];
         for ( int i=0 ; i<creditsAsString.length; i++){
             credits[i] = Float.parseFloat( creditsAsString[i] );
         }
-        final float[] debits = new float [debitsAsString.length];
         for ( int i=0 ; i<debitsAsString.length; i++){
             debits[i] = Float.parseFloat( debitsAsString[i] );
         }
