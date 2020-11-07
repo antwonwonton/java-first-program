@@ -1,6 +1,8 @@
 package com.h2;
 import java.time.LocalDate;
 import java.time.YearMonth;
+import com.h2.Utilities;
+import jdk.jshell.execution.Util;
 
 public class SavingsCalculator {
     private float[] credits;
@@ -39,10 +41,10 @@ public class SavingsCalculator {
         final float[] credits = new float [creditsAsString.length];
         final float[] debits = new float [debitsAsString.length];
         for ( int i=0 ; i<creditsAsString.length; i++){
-            credits[i] = Float.parseFloat( creditsAsString[i] );
+            credits[i] = Utilities.getFloatValue( creditsAsString[i] );
         }
         for ( int i=0 ; i<debitsAsString.length; i++){
-            debits[i] = Float.parseFloat( debitsAsString[i] );
+            debits[i] = Utilities.getFloatValue( debitsAsString[i] );
         }
         final SavingsCalculator calculator = new SavingsCalculator(credits, debits);
         float netSavings = calculator.calculate();

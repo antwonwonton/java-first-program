@@ -1,5 +1,5 @@
 package com.h2;
-
+import com.h2.Utilities;
 import java.text.DecimalFormat;
 
 public class MortgageCalculator {
@@ -35,9 +35,9 @@ public class MortgageCalculator {
         return ("monthlyPayment: " + df.format(monthlyPayment));
     }
     public static void main(String[] args) {
-        final   long    loanAmount      = Long.parseLong(args[0]);
-        final   int     termInYears     = Integer.parseInt(args[1]);
-        final   float   annualRate      = Float.parseFloat(args[2]);
+        final   long    loanAmount      = Utilities.getLongValue(args[0]);
+        final   int     termInYears     = Utilities.getIntValue(args[1]);
+        final   float   annualRate      = Utilities.getFloatValue(args[2]);
         final  MortgageCalculator calculator = new MortgageCalculator( loanAmount, termInYears, annualRate);
         calculator.calculateMonthlyPayment();
         System.out.print( calculator.toString() + "\n" );
